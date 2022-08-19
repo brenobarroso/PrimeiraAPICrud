@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using MeuTodo.Models;
 using System.Collections.Generic;
+using MeuTodo.Data;
+using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 
 namespace MeuTodo.Controllers

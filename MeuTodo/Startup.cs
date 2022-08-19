@@ -7,12 +7,13 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MeuTodo.Data;
 
 namespace MeuTodo
 {
     public class Startup
     {
-        
+
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
@@ -33,9 +34,9 @@ namespace MeuTodo
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern:"{controller=Home}/{action=Index}/{id?}"
+                    pattern: "{controller=Home}/{action=Index}/{id?}"
                 );
-                
+
             });
         }
     }
