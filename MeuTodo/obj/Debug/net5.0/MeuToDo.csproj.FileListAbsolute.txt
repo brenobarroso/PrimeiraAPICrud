@@ -1,0 +1,9 @@
+/home/pagcerto/Documents/dev/PrimeiraAPICrud/MeuTodo/obj/Debug/net5.0/MeuToDo.csproj.AssemblyReference.cache
+/home/pagcerto/Documents/dev/PrimeiraAPICrud/MeuTodo/obj/Debug/net5.0/MeuToDo.GeneratedMSBuildEditorConfig.editorconfig
+/home/pagcerto/Documents/dev/PrimeiraAPICrud/MeuTodo/obj/Debug/net5.0/MeuToDo.AssemblyInfoInputs.cache
+/home/pagcerto/Documents/dev/PrimeiraAPICrud/MeuTodo/obj/Debug/net5.0/MeuToDo.AssemblyInfo.cs
+/home/pagcerto/Documents/dev/PrimeiraAPICrud/MeuTodo/obj/Debug/net5.0/MeuToDo.csproj.CoreCompileInputs.cache
+/home/pagcerto/Documents/dev/PrimeiraAPICrud/MeuTodo/obj/Debug/net5.0/MeuToDo.MvcApplicationPartsAssemblyInfo.cache
+/home/pagcerto/Documents/dev/PrimeiraAPICrud/MeuTodo/obj/Debug/net5.0/MeuToDo.dll
+/home/pagcerto/Documents/dev/PrimeiraAPICrud/MeuTodo/obj/Debug/net5.0/ref/MeuToDo.dll
+/home/pagcerto/Documents/dev/PrimeiraAPICrud/MeuTodo/obj/Debug/net5.0/MeuToDo.pdb

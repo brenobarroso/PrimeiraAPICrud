@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/qXuGbjQYRT/0K1ibVTg+fJ33vzuHhdvTrlSCKlmZCdNUyeS5mdKBRl9TxdwHC9fI4MBce2sOWNsFERSa6CZTw==",
+  "dgSpecHash": "iX+y6jzzSkDGGZTuFuLEpR9i6cFWav71Aoz44vMk65KsIOPK5u4jB3O58YVWd5UlIgMry7jqKs5NRu+4G//R0w==",
   "success": true,
-  "projectFilePath": "/home/pagcerto/Documents/dev/PrimeiraAPICrud/MeuToDo/MeuToDo.csproj",
+  "projectFilePath": "/home/pagcerto/Documents/dev/PrimeiraAPICrud/MeuTodo/MeuToDo.csproj",
   "expectedPackageFiles": [
     "/home/pagcerto/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/home/pagcerto/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",

@@ -1078,11 +1078,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/pagcerto/Documents/dev/PrimeiraAPICrud/MeuToDo/MeuToDo.csproj",
+      "projectUniqueName": "/home/pagcerto/Documents/dev/PrimeiraAPICrud/MeuTodo/MeuToDo.csproj",
       "projectName": "MeuToDo",
-      "projectPath": "/home/pagcerto/Documents/dev/PrimeiraAPICrud/MeuToDo/MeuToDo.csproj",
+      "projectPath": "/home/pagcerto/Documents/dev/PrimeiraAPICrud/MeuTodo/MeuToDo.csproj",
       "packagesPath": "/home/pagcerto/.nuget/packages/",
-      "outputPath": "/home/pagcerto/Documents/dev/PrimeiraAPICrud/MeuToDo/obj/",
+      "outputPath": "/home/pagcerto/Documents/dev/PrimeiraAPICrud/MeuTodo/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/pagcerto/.nuget/NuGet/NuGet.Config"
