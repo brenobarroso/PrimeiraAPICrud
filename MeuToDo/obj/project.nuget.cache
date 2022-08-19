@@ -1,14 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "FVKoch6YmqOfUsKSrZSfbHPfLAdPsz2ZyErua7i2VeLksf7khpUEcQo/k6dg6kmdjKbng7cDoEfQo7ttz3Zz6A==",
+  "dgSpecHash": "5RkebqJvYjvrqWGJbPCFXBpdDUmkGop/QtnAPuHp5um0f1rrzKSF7yXMSBLdJ2SDivcQNoSvuel0UkgZFjBAWQ==",
   "success": true,
   "projectFilePath": "/home/pagcerto/Documents/dev/PrimeiraAPICrud/MeuToDo/MeuToDo.csproj",
   "expectedPackageFiles": [
+    "/home/pagcerto/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
+    "/home/pagcerto/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/home/pagcerto/.nuget/packages/microsoft.data.sqlite.core/5.0.0/microsoft.data.sqlite.core.5.0.0.nupkg.sha512",
     "/home/pagcerto/.nuget/packages/microsoft.dotnet.platformabstractions/3.1.6/microsoft.dotnet.platformabstractions.3.1.6.nupkg.sha512",
     "/home/pagcerto/.nuget/packages/microsoft.entityframeworkcore/5.0.0/microsoft.entityframeworkcore.5.0.0.nupkg.sha512",
     "/home/pagcerto/.nuget/packages/microsoft.entityframeworkcore.abstractions/5.0.0/microsoft.entityframeworkcore.abstractions.5.0.0.nupkg.sha512",
     "/home/pagcerto/.nuget/packages/microsoft.entityframeworkcore.analyzers/5.0.0/microsoft.entityframeworkcore.analyzers.5.0.0.nupkg.sha512",
+    "/home/pagcerto/.nuget/packages/microsoft.entityframeworkcore.design/5.0.0/microsoft.entityframeworkcore.design.5.0.0.nupkg.sha512",
     "/home/pagcerto/.nuget/packages/microsoft.entityframeworkcore.relational/5.0.0/microsoft.entityframeworkcore.relational.5.0.0.nupkg.sha512",
     "/home/pagcerto/.nuget/packages/microsoft.entityframeworkcore.sqlite/5.0.0/microsoft.entityframeworkcore.sqlite.5.0.0.nupkg.sha512",
     "/home/pagcerto/.nuget/packages/microsoft.entityframeworkcore.sqlite.core/5.0.0/microsoft.entityframeworkcore.sqlite.core.5.0.0.nupkg.sha512",
