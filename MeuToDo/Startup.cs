@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace MeuToDo
+namespace MeuTodo
 {
     public class Startup
     {
@@ -16,6 +16,7 @@ namespace MeuToDo
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddDbContext<AppDbContext>();
 
         }
 

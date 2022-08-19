@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using MeuTodo.Models;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace MeuTodo.Controllers
 {
@@ -10,9 +11,14 @@ namespace MeuTodo.Controllers
     {
         [HttpGet]
         [Route("todos")]
-        public List<Todo> Get()
+        public async Task<IActionResult> Get(
+            [FromServices] AppDbContext context)
         {
-            return new List<Todo>();
+            var todos = await context
+            .Todos
+            .AsNoTracking()
+            .ToListAsync();
+            return Ok(todos);
         }
     }
 }
