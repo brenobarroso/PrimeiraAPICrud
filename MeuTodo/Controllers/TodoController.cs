@@ -13,6 +13,7 @@ namespace MeuTodo.Controllers
     [Route ("v1")]
     public class TodoController : ControllerBase
     {
+        // Método para visualizar todos os itens do banco.
         [HttpGet]
         [Route("todos")]
         public async Task<IActionResult> GetAsync(
@@ -25,6 +26,7 @@ namespace MeuTodo.Controllers
             return Ok(todos);
         }
 
+        // Método para visualizar um item do banco a partir de seu id.
         [HttpGet]
         [Route("todos/{id}")]
         public async Task<IActionResult> GetByIdAsync(
@@ -38,6 +40,7 @@ namespace MeuTodo.Controllers
             return todo == null ? NotFound() : Ok(todo);
         }
 
+        // Método para adicionar um item no banco (aqui usando view models).
         [HttpPost("todos")]
         public async Task<IActionResult> PostAsync(
             [FromServices] AppDbContext context,
@@ -64,5 +67,38 @@ namespace MeuTodo.Controllers
                 return BadRequest();
             }
         }
+
+        // Método para atualizar um item a partir de seu id.
+        [HttpPut ("todos/{id}")]
+        public async Task<IActionResult> PutAsync(
+            [FromServices] AppDbContext context,
+            [FromBody] CreateTodoViewModel model,
+            [FromRoute] int id)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest();
+
+            var todo = await context
+                .Todos
+                .FirstOrDefaultAsync(x=> x.Id == id);
+
+            if(todo == null)
+                return NotFound();
+
+            try
+            {
+                todo.Title = model.Title;
+
+                
+                context.Todos.Update(todo);
+                await context.SaveChangesAsync();
+                return Ok(todo);
+            }
+            catch (Exception e)
+            {
+                return BadRequest();
+            }
+        }
+
     }
 }
