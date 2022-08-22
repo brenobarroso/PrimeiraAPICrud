@@ -100,5 +100,26 @@ namespace MeuTodo.Controllers
             }
         }
 
+        // Método para deletar um item a partir de sua id.
+        [HttpDelete("todos/{id}")]
+        public async Task<IActionResult> DeleteAsync(
+            [FromServices] AppDbContext context,
+            [FromRoute] int id)
+        {
+            var todo = await context.Todos.FirstOrDefaultAsync(x => x.Id == id);
+
+            try
+            {
+                context.Todos.Remove(todo);
+                await context.SaveChangesAsync();
+
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                return BadRequest();
+            }
+        }
+
     }
 }
