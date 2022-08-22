@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using MeuTodo.Data;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
+using System;
+using MeuTodo.ViewModels;
 
 namespace MeuTodo.Controllers
 {
@@ -34,7 +36,33 @@ namespace MeuTodo.Controllers
             .AsNoTracking()
             .FirstOrDefaultAsync(x=>x.Id == id);
             return todo == null ? NotFound() : Ok(todo);
-            
+        }
+
+        [HttpPost("todos")]
+        public async Task<IActionResult> PostAsync(
+            [FromServices] AppDbContext context,
+            [FromBody] CreateTodoViewModel model)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest();
+
+            var todo = new Todo
+            {
+                Date = DateTime.Now,
+                Done = false,
+                Title = model.Title
+            };
+
+            try
+            {
+                await context.Todos.AddAsync(todo);
+                await context.SaveChangesAsync();
+                return Created($"v1/todos/{todo.Id}", todo);
+            }
+            catch (Exception e)
+            {
+                return BadRequest();
+            }
         }
     }
 }
