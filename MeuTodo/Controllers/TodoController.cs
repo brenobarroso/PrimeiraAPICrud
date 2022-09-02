@@ -62,7 +62,7 @@ namespace MeuTodo.Controllers
                 await context.SaveChangesAsync();
                 return Created($"v1/todos/{todo.Id}", todo);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return BadRequest();
             }
@@ -94,7 +94,7 @@ namespace MeuTodo.Controllers
                 await context.SaveChangesAsync();
                 return Ok(todo);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return BadRequest();
             }
@@ -115,7 +115,7 @@ namespace MeuTodo.Controllers
 
                 return Ok();
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return BadRequest();
             }
