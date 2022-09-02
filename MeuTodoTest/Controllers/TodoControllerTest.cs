@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Threading;
@@ -14,6 +15,18 @@ namespace MeuTodoTest.Controllers
 {
     public class TodoControllerTest
     {
+        protected readonly AppDbContext _context;
+        public TodoControllerTest()
+        {
+            var options = new DbContextOptionsBuilder<AppDbContext>()
+                .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString())
+                .Options;
+
+            _context = new AppDbContext(options);
+
+            _context.Database.EnsureCreated();
+        }
+
         [Fact]
         public async Task ShouldListAll()
         {
@@ -35,19 +48,10 @@ namespace MeuTodoTest.Controllers
                 Title = "Todo test #3",
             });
 
-            var todoDbSetFake = new Mock<DbSet<Todo>>();
-            todoDbSetFake.Setup(x => x.ToListAsync(It.IsAny<CancellationToken>()))
-                .Callback((CancellationToken token) => { })
-                .Returns((CancellationToken token) => Task.FromResult(todos));
-
-            var dbContextFake = new Mock<AppDbContext>();
-            dbContextFake.Setup(x => x.Todos).Returns(todoDbSetFake.Object);
-            dbContextFake.Setup(x => x.SaveChangesAsync(It.IsAny<CancellationToken>())).Returns(() => Task.FromResult(0));
-
             var todoController = new TodoController();
 
             /// Act
-            var result = (OkObjectResult)await todoController.GetAsync(dbContextFake.Object);
+            var result = (OkObjectResult)await todoController.GetAsync(_context);
 
             // Assert
             Assert.Equal(200, result.StatusCode);
