@@ -3,14 +3,18 @@ using Microsoft.EntityFrameworkCore;
 
 namespace MeuTodo.Data
 {
-    
+
     public class AppDbContext : DbContext
     {
-        public DbSet<Todo> Todos { get; set; }
+        public AppDbContext(DbContextOptions options) : base(options)
+        {
+        }
 
-        protected override void OnConfiguring (DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlite(connectionString: "DataSource=app.db;Cache=Shared");
-        
+        protected AppDbContext()
+        {
+        }
+
+        public DbSet<Todo> Todos { get; set; }
     }
 
 }

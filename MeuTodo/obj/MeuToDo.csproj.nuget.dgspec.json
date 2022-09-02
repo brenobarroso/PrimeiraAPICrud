@@ -1,26 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "/home/pagcerto/Documents/dev/PrimeiraAPICrud/MeuTodo/MeuToDo.csproj": {}
+    "C:\\Users\\pedro\\OneDrive\\Documentos\\Pagcerto\\Afins\\Estagio\\PrimeiraAPICrud\\MeuTodo\\MeuTodo.csproj": {}
   },
   "projects": {
-    "/home/pagcerto/Documents/dev/PrimeiraAPICrud/MeuTodo/MeuToDo.csproj": {
+    "C:\\Users\\pedro\\OneDrive\\Documentos\\Pagcerto\\Afins\\Estagio\\PrimeiraAPICrud\\MeuTodo\\MeuTodo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/pagcerto/Documents/dev/PrimeiraAPICrud/MeuTodo/MeuToDo.csproj",
-        "projectName": "MeuToDo",
-        "projectPath": "/home/pagcerto/Documents/dev/PrimeiraAPICrud/MeuTodo/MeuToDo.csproj",
-        "packagesPath": "/home/pagcerto/.nuget/packages/",
-        "outputPath": "/home/pagcerto/Documents/dev/PrimeiraAPICrud/MeuTodo/obj/",
+        "projectUniqueName": "C:\\Users\\pedro\\OneDrive\\Documentos\\Pagcerto\\Afins\\Estagio\\PrimeiraAPICrud\\MeuTodo\\MeuTodo.csproj",
+        "projectName": "MeuTodo",
+        "projectPath": "C:\\Users\\pedro\\OneDrive\\Documentos\\Pagcerto\\Afins\\Estagio\\PrimeiraAPICrud\\MeuTodo\\MeuTodo.csproj",
+        "packagesPath": "C:\\Users\\pedro\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\pedro\\OneDrive\\Documentos\\Pagcerto\\Afins\\Estagio\\PrimeiraAPICrud\\MeuTodo\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "/home/pagcerto/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\pedro\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://paggcerto.pkgs.visualstudio.com/Api/_packaging/Pagcerto/nuget/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
@@ -67,7 +71,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.408/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

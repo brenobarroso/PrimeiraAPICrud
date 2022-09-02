@@ -10,7 +10,7 @@ using MeuTodo.ViewModels;
 namespace MeuTodo.Controllers
 {
     [ApiController]
-    [Route ("v1")]
+    [Route("v1")]
     public class TodoController : ControllerBase
     {
         // Método para visualizar todos os itens do banco.
@@ -36,7 +36,7 @@ namespace MeuTodo.Controllers
             var todo = await context
             .Todos
             .AsNoTracking()
-            .FirstOrDefaultAsync(x=>x.Id == id);
+            .FirstOrDefaultAsync(x => x.Id == id);
             return todo == null ? NotFound() : Ok(todo);
         }
 
@@ -62,14 +62,14 @@ namespace MeuTodo.Controllers
                 await context.SaveChangesAsync();
                 return Created($"v1/todos/{todo.Id}", todo);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return BadRequest();
             }
         }
 
         // Método para atualizar um item a partir de seu id.
-        [HttpPut ("todos/{id}")]
+        [HttpPut("todos/{id}")]
         public async Task<IActionResult> PutAsync(
             [FromServices] AppDbContext context,
             [FromBody] CreateTodoViewModel model,
@@ -80,21 +80,21 @@ namespace MeuTodo.Controllers
 
             var todo = await context
                 .Todos
-                .FirstOrDefaultAsync(x=> x.Id == id);
+                .FirstOrDefaultAsync(x => x.Id == id);
 
-            if(todo == null)
+            if (todo == null)
                 return NotFound();
 
             try
             {
                 todo.Title = model.Title;
 
-                
+
                 context.Todos.Update(todo);
                 await context.SaveChangesAsync();
                 return Ok(todo);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return BadRequest();
             }
@@ -115,7 +115,7 @@ namespace MeuTodo.Controllers
 
                 return Ok();
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return BadRequest();
             }

@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MeuTodo.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace MeuTodo
 {
@@ -17,8 +18,10 @@ namespace MeuTodo
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddDbContext<AppDbContext>();
-
+            services.AddDbContext<AppDbContext>(opt =>
+            {
+                opt.UseSqlite(connectionString: "DataSource=app.db;Cache=Shared");
+            });
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
