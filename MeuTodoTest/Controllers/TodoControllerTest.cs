@@ -1,14 +1,11 @@
 using System;
-using System.Collections.Generic;
-using System.Net;
-using System.Threading;
+using System.Linq;
 using System.Threading.Tasks;
 using MeuTodo.Controllers;
 using MeuTodo.Data;
-using MeuTodo.Models;
+using MeuTodo.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Moq;
 using Xunit;
 
 namespace MeuTodoTest.Controllers
@@ -31,23 +28,6 @@ namespace MeuTodoTest.Controllers
         public async Task ShouldListAll()
         {
             /// Arrange
-            var todos = new List<Todo>();
-            todos.Add(new Todo
-            {
-                Id = 1,
-                Title = "Todo test #1",
-            });
-            todos.Add(new Todo
-            {
-                Id = 2,
-                Title = "Todo test #2",
-            });
-            todos.Add(new Todo
-            {
-                Id = 3,
-                Title = "Todo test #3",
-            });
-
             var todoController = new TodoController();
 
             /// Act
@@ -55,6 +35,31 @@ namespace MeuTodoTest.Controllers
 
             // Assert
             Assert.Equal(200, result.StatusCode);
+        }
+
+        [Fact]
+        public async Task ShouldAddTodo()
+        {
+            /// Arrange
+            var model = new CreateTodoViewModel
+            {
+                Title = "Todo teste"
+            };
+
+            var todoController = new TodoController();
+
+            /// Act
+            var result = (CreatedResult)await todoController.PostAsync(_context, model);
+
+            var allTodos = await _context.Todos.ToListAsync();
+
+            // Assert
+            Assert.Equal(201, result.StatusCode);
+            Assert.NotEmpty(allTodos);
+            Assert.Single(allTodos);
+            Assert.Equal(model.Title, allTodos.First().Title);
+            Assert.False(allTodos.First().Done);
+            Assert.Equal(DateTime.Today, allTodos.First().Date.Date);
         }
     }
 }
